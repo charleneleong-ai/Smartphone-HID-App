@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+</head>
+<body>
+  <input type='file' id="file" />
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/socket.io/socket.io-stream.js"></script>
+ <script>
+            var socket = io();
+            let fileElem = document.getElementById('file');
+             socket.on('accelerometer', function(data) {
+                 console.log('Accelerometer: ' + data);
+             });
+             fileElem.onchange = e => {
+                             let file = e.target.files[0];
+                             let stream = ss.createStream();
+                             ss(socket).emit('file', stream, {size: file.size});
+                             let blobStream = ss.createBlobReadStream(file);
+                             let size = 0;
+                             blobStream.on('data', chunk => {
+                                 size += chunk.length;
+                                 console.log(Math.floor(size / file.size * 100) + '%');
+                             });
+
+                             blobStream.pipe(stream);
+                             blobStream.on('end' , ()=> {
+                                 console.log('done');
+                             });
+                           }
+
+         </script>
+</body>
+</html>

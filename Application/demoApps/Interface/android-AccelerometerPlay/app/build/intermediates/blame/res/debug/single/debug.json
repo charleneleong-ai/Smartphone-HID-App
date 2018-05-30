@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\build\\intermediates\\res\\merged\\debug\\layout_main.xml.flat",
+        "source": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ball.png.flat",
+        "source": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\src\\main\\res\\drawable-hdpi\\ball.png"
+    },
+    {
+        "merged": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_wood.jpg.flat",
+        "source": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\src\\main\\res\\drawable-hdpi\\wood.jpg"
+    },
+    {
+        "merged": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "D:\\SmartphoneHIDProject\\Application\\demoApps\\android-AccelerometerPlay\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    }
+]

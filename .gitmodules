@@ -1,0 +1,2 @@
+[submodule "Application/virtual-joystick-demo"]
+	url = https://github.com/controlwear/virtual-joystick-demo.git

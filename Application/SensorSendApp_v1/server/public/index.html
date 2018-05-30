@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width">
+
+<title>Socket WebClient</title>
+		<link rel='stylesheet' type='text/css' href='css/base.css'>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/traqball.js"></script>
+
+		<script type="text/javascript">
+
+		window.addEventListener("load", callback, false);
+
+
+    var traqball_1,traqball_2, traqball_3;
+		function callback(){
+		     	traqball_1 = new Traqball({stage: "stage", axis: [-1,0,0], angle: 0});
+		      // traqball_2 = new Traqball({stage: "stage2", axis: [-0.57,0.777,-0.287], angle: 1, limitAxxis: "y"}),
+		      // traqball_3 = new Traqball({stage: "stage3", axis: [-0.57,0.777,-0.287], angle: 1, limitAxxis: "y"});
+		  }
+      var socket = io();
+      socket.on('orientation', function (data) {
+      traqball_1.setup({stage: "stage", axis: [data.x, data.y, data.z],  angle: data.w});
+     console.log("Orientation Client: xValue: "+ data.x+" yValue: "+data.y+" zValue: "+data.z);
+      });
+		</script>
+	</head>
+
+<body id="body">
+	<section id="stage">
+		<article id="box">
+	    <section id="front"></section>
+		 	<section id="top"></section>
+		 	<section id="bottom"></section>
+			<section id="back"></section>
+			<section id="left"></section>
+			<section id="right"></section>
+		</article>
+	</section>
+	<!--
+<article id="stages">
+	<section id="stage1" class="stage">
+		<div class="box">
+			<div class = "spike" id="spike1">
+				<div class = "tetraeder e1">
+					<div class="tetr t1"></div>
+					<div class="tetr t2"></div>
+					<div class="tetr t3"></div>
+				</div>
+				<div class = "tetraeder e2">
+					<div class="tetr t1"></div>
+					<div class="tetr t2"></div>
+					<div class="tetr t3"></div>
+				</div>
+			</div>
+			<div class = "spike" id="spike2">
+				<div class = "tetraeder e1">
+					<div class="tetr t1"></div>
+					<div class="tetr t2"></div>
+					<div class="tetr t3"></div>
+				</div>
+				<div class = "tetraeder e2">
+					<div class="tetr t1"></div>
+					<div class="tetr t2"></div>
+					<div class="tetr t3"></div>
+				</div>
+			</div>
+			<div class = "spike" id="spike3">
+				<div class = "tetraeder e1">
+					<div class="tetr t1"></div>
+					<div class="tetr t2"></div>
+					<div class="tetr t3"></div>
+				</div>
+				<div class = "tetraeder e2">
+					<div class="tetr t1"></div>
+					<div class="tetr t2"></div>
+					<div class="tetr t3"></div>
+				</div>
+			</div>
+			<div class = "spike" id="spike4">
+				<div class = "tetraeder e1">
+					<div class="tetr t1"></div>
+					<div class="tetr t2"></div>
+					<div class="tetr t3"></div>
+				</div>
+				<div class = "tetraeder e2">
+					<div class="tetr t1"></div>
+					<div class="tetr t2"></div>
+					<div class="tetr t3"></div>
+				</div>
+			</div>
+
+			<div class = "spike" id="spike5">
+				<div class = "tetraeder e1">
+					<div class="tetr t1"></div>
+					<div class="tetr t2"></div>
+					<div class="tetr t3"></div>
+				</div>
+				<div class = "tetraeder e2">
+					<div class="tetr t1"></div>
+					<div class="tetr t2"></div>
+					<div class="tetr t3"></div>
+				</div>
+			</div>
+
+			<div class = "spike" id="spike6">
+				<div class = "tetraeder e1">
+					<div class="tetr t1"></div>
+					<div class="tetr t2"></div>
+					<div class="tetr t3"></div>
+				</div>
+				<div class = "tetraeder e2">
+					<div class="tetr t1"></div>
+					<div class="tetr t2"></div>
+					<div class="tetr t3"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="stage2" class="stage">
+
+			<div class="box">
+				<div class = "spike" id="spike1">
+					<div class = "tetraeder e1">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+						<div class="tetr t4"></div>
+					</div>
+					<div class = "tetraeder e2">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+				</div>
+				<div class = "spike" id="spike2">
+					<div class = "tetraeder e1">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+					<div class = "tetraeder e2">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+				</div>
+				<div class = "spike" id="spike3">
+					<div class = "tetraeder e1">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+					<div class = "tetraeder e2">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+				</div>
+				<div class = "spike" id="spike4">
+					<div class = "tetraeder e1">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+					<div class = "tetraeder e2">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+				</div>
+
+				<div class = "spike" id="spike5">
+					<div class = "tetraeder e1">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+					<div class = "tetraeder e2">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+				</div>
+
+				<div class = "spike" id="spike6">
+					<div class = "tetraeder e1">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+					<div class = "tetraeder e2">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+				</div>
+			</div>
+	</section>
+
+	<section id="stage3" class="stage">
+
+			<div class="box">
+				<div class = "spike" id="spike1">
+					<div class = "tetraeder e1">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+						<div class="tetr t4"></div>
+					</div>
+					<div class = "tetraeder e2">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+				</div>
+				<div class = "spike" id="spike2">
+					<div class = "tetraeder e1">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+					<div class = "tetraeder e2">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+				</div>
+				<div class = "spike" id="spike3">
+					<div class = "tetraeder e1">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+					<div class = "tetraeder e2">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+				</div>
+				<div class = "spike" id="spike4">
+					<div class = "tetraeder e1">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+					<div class = "tetraeder e2">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+				</div>
+
+				<div class = "spike" id="spike5">
+					<div class = "tetraeder e1">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+					<div class = "tetraeder e2">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+				</div>
+
+				<div class = "spike" id="spike6">
+					<div class = "tetraeder e1">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+					<div class = "tetraeder e2">
+						<div class="tetr t1"></div>
+						<div class="tetr t2"></div>
+						<div class="tetr t3"></div>
+					</div>
+				</div>
+			</div>
+	</section>
+</article> -->
+</body>
+</html>
