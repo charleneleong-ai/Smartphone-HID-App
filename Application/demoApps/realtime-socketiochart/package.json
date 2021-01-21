@@ -14,7 +14,7 @@
     "express": "^4.16.2",
     "fusioncharts": "^3.12.2",
     "pubnub": "^4.20.0",
-    "socket.io": "^2.0.4",
+    "socket.io": "^2.4.0",
     "webpack": "^3.10.0"
   }
 }
